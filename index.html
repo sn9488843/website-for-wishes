@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Taha 🎉</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+body{
+    margin:0;
+    font-family:'Poppins', sans-serif;
+    background:linear-gradient(135deg,#ffc8dd,#bde0fe);
+    overflow-x:hidden;
+}
+
+/* Pages */
+.page{
+    min-height:100vh;
+    display:none;
+    justify-content:center;
+    align-items:center;
+}
+.page.active{ display:flex; }
+
+.container{
+    background:white;
+    width:90%;
+    max-width:800px;
+    padding:2.5rem;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 15px 35px rgba(0,0,0,0.2);
+}
+.main-title{
+    font-family:'Great Vibes', cursive;
+    font-size:3.5rem;
+    color:#ff4d6d;
+}
+
+.message{
+    font-size:1.1rem;
+    color:#555;
+    margin:1.5rem 0;
+    line-height:1.8;
+}
+
+.btn{
+    background:#ff4d6d;
+    color:white;
+    border:none;
+    padding:0.8rem 2rem;
+    border-radius:30px;
+    font-size:1rem;
+    cursor:pointer;
+    margin:10px;
+}
+.btn:hover{ background:#e63950; }
+
+/* IMAGE & VIDEO STYLING /
+/* Video + image center, controlled size */
+
+.media-box {
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.media-box video {
+  width: 100%;
+  max-height: 250px;
+  object-fit: contain;
+  background: black;
+  border-radius: 15px;
+}
+
+/* Buttons */
+
+.buttons {
+  margin-top: 10px;
+}
+
+.buttons button {
+  padding: 6px 12px;
+  margin: 0 4px;
+  border: none;
+  border-radius: 16px;
+  background: #ff4d6d;
+  color: #fff;
+  cursor: pointer;
+  font-size: 13px;
+}
+  .buttons button:hover {
+    background: #e63950;
+  }
+
+
+/* Confetti */
+.confetti{
+    position:fixed;
+    width:10px;
+    height:10px;
+    top:-10px;
+    animation:fall 5s linear infinite;
+    opacity:0.8;
+    z-index:9999;
+}
+@keyframes fall{
+    to{ transform:translateY(110vh) rotate(360deg); }
+}
+
+/* Hearts */
+.heart{
+    position:fixed;
+    bottom:-20px;
+    font-size:24px;
+ animation:floatUp 6s linear infinite;
+    z-index:9999;
+}
+@keyframes floatUp{
+    to{
+        transform:translateY(-110vh);
+        opacity:0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- PAGE 1 -->
+<div class="page active" id="page1">
+<div class="container">
+<h1 class="main-title">Happy Birthday Taha 🎂</h1>
+
+<p class="message">A small surprise made with lots of love 💖</p>
+<p>Today is all about celebrating the most amazing person in my life 🎉</p>
+<p>I have created something magical just for you on your special day! </p>
+<div class="media-box">
+
+  <video id="myVideo">
+    <source src="videos/video1.mp4" type="video/mp4">
+  </video>
+
+  <div class="buttons">
+    <button onclick="playVideo()">Play</button>
+    <button onclick="pauseVideo()">Pause</button>
+  </div>
+
+</div>
+<br><br>
+<button class="btn" onclick="nextPage(1)">Next ➜</button>
+</div>
+</div>
+<!-- PAGE 2 -->
+<div class="page" id="page2">
+<div class="container">
+<h1>Open the cards 💌</h1>
+<p>Click the button below to see the next</p>
+<img id="cardImage" src="card1.jpg.jpeg" width="250"
+alt="Card Image">
+<br>
+<button class="btn" onclick="nextImage()">Next Image</button>
+<br><br>
+<button class="btn" onclick="nextPage(2)">Next ➜</button>
+</div>
+</div>
+<!-- PAGE 3 -->
+<div class="page" id="page3">
+<div class="container">
+<h1 class="main-title">My Dear Taha 💖</h1>
+
+<p class="message">
+You deserve all the magic ✨, all the dreams 🌙, and all the love 💞 this universe has to offer.May this year bring you closer to everything your heart desires 💝,  
+and may each day be filled with moments that take your breath away 😍🌸.
+Thank you for being you — wonderful 🌟, amazing 💫,  
+and absolutely irreplaceable 💕🫶
+Ap janty hain ap meri sab se zyada safe place ho</strong> 🫶  
+jis se main apni har baat keh sakti hoon 🤍.  
+<br>
+Hum ne itna waqt saath guzara ⏳💞,  
+ap ne mujh par itna trust kiya 🤝,  
+aur ap ne meri har baat maani 🥹💖.  
+<br><br>
+Is sab ke liye <span style="color:#ff4d6d; font-weight:700;">THANK YOUUUUUUUUUU</span> 😭💝✨
+You are one of the most special people in my life.  
+May your birthday be filled with love, smiles and happiness 🌸  
+Always stay blessed and successful.
+I don't have enough words to express how much you mean to me, but I hope this small surprise brings a big smile to your face on your special day! 🎉💖
+</p>
+
+<button class="btn" onclick="prevPage(3)">⬅ Back</button>
+<button class="btn" onclick="nextPage(3)">Next ➜</button>
+</div>
+</div>
+
+<!-- PAGE 4 -->
+<div class="page" id="page4">
+<div class="container">
+<h1 class="main-title">🎥 Special Video</h1>
+
+<div class="media-box">
+
+  <video id="myVideo2">
+    <source src="videos/video2.mp4" type="video/mp4">
+  </video>
+
+  <div class="buttons">
+    <button onclick="playVideo2()">Play</button>
+    <button onclick="pauseVideo2()">Pause</button>
+  </div>
+
+</div>
+
+
+<br><br>
+<button class="btn" onclick="prevPage(4)">⬅ Back</button>
+<button class="btn" onclick="nextPage(4)">Next ➜</button>
+</div>
+</div>
+
+<!-- PAGE 5 -->
+<div class="page" id="page5">
+<div class="container">
+<h1 class="main-title">Final Wishes 🎁</h1>
+
+<p class="message">Stay happy, stay smiling, always 💖</p>
+
+<div class="media-box">
+
+  <video id="myVideo3">
+    <source src="videos/video3.mp4" type="video/mp4">
+  </video>
+
+  <div class="buttons">
+    <button onclick="playVideo3()">Play</button>
+    <button onclick="pauseVideo3()">Pause</button>
+  </div>
+
+</div>
+
+
+
+<br><br>
+<button class="btn" onclick="prevPage(5)">⬅ Back</button>
+<button class="btn" onclick="restart()">Restart 🔄</button>
+</div>
+</div>
+<script>
+/* ==================== PAGE NAVIGATION ==================== */
+let currentPage = 1;
+const totalPages = 5; // total number of pages
+const video = document.getElementById("myVideo");
+
+function playVideo() {
+  video.play();
+}
+
+function pauseVideo() {
+  video.pause();
+}
+const video2 = document.getElementById("myVideo2");
+
+function playVideo2() {
+  video2.play();
+}
+
+function pauseVideo2() {
+  video2.pause();
+}
+const video3 = document.getElementById("myVideo3");
+
+function playVideo3() {
+  video3.play();
+}
+
+function pauseVideo3() {
+  video3.pause();
+}
+
+function nextPage(n) {
+    if (n >= totalPages) return;
+    document.getElementById("page" + n).classList.remove("active");
+    document.getElementById("page" + (n + 1)).classList.add("active");
+    currentPage = n + 1;
+}
+
+function prevPage(n) {
+    if (n <= 1) return;
+    document.getElementById("page" + n).classList.remove("active");
+    document.getElementById("page" + (n - 1)).classList.add("active");
+    currentPage = n - 1;
+}
+
+function restart() {
+    document.getElementById("page" + currentPage).classList.remove("active");
+    document.getElementById("page1").classList.add("active");
+    currentPage = 1;
+}
+
+/* ==================== IMAGE SLIDER ==================== */
+let images = [
+    "card2.jpg.jpeg",
+    "card3.jpg.jpeg",
+    "card4.jpg.jpeg"  
+];
+let imgIndex = 0;
+
+function nextImage() {
+    imgIndex = (imgIndex + 1) % images.length;
+    document.getElementById("cardImage").src = images[imgIndex];
+}
+
+/* ==================== CONFETTI ==================== */
+for (let i = 0; i < 40; i++) {
+    let c = document.createElement("div");
+    c.className = "confetti";
+    c.style.left = Math.random() * 100 + "vw";
+    c.style.background = ["#ff4d6d", "#ffd166", "#4ecdc4", "#bde0fe"][Math.floor(Math.random() * 4)];
+    c.style.animationDuration = (Math.random() * 3 + 3) + "s";
+    document.body.appendChild(c);
+}
+
+/* ==================== FLOATING HEARTS ==================== */
+setInterval(() => {
+    let h = document.createElement("div");
+    h.className = "heart";
+    h.innerHTML = "💖";
+    h.style.left = Math.random() * 100 + "vw";
+    h.style.animationDuration = (Math.random() * 3 + 4) + "s";
+    document.body.appendChild(h);
+
+    setTimeout(() => {
+        h.remove();
+    }, 7000);
+}, 800);
+</script>
+
+</body>
+</html>
